@@ -15,7 +15,7 @@ struct gpiod_line * output_lines[LINES];
 void
 gpio_init() {
     int i;
-    int pins[] = { 24 };		// operate on all these pins
+    int pins[] = { 22 };		// operate on all these pins
 
     /* gpio structures */
     struct gpiod_chip * output_chip;
@@ -49,7 +49,7 @@ gpio_writer() {
         v = !v;			// this toggles between 1 and 0
 	// we are going to blink all the lines 
         for (int j = 0; j < LINES; j++) {
-            XXX	// write v to line j
+            gpiod_line_set_value(output_lines[j], v);
         }
 		usleep(USPERIOD);
     }

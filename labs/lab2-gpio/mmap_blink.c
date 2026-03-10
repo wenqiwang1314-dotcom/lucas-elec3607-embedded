@@ -10,7 +10,7 @@
 #include <sys/types.h>
 
 
-#define OUTPUTPIN 24
+#define OUTPUTPIN 22
 
 #define AXI_GPIO_BASE 0x80030000UL
 
@@ -45,7 +45,8 @@ main(int argc, char *argv[])
     gpio_p[GPIO_TRI / 4] &= ~(1 << OUTPUTPIN); // set as output
 
     for (;;) {
-        XXX;
+        gpio_p[GPIO_DATA / 4] ^= (1 << OUTPUTPIN); // toggle the pin
+        usleep(500000); // sleep for 500ms
     }
 
     // never reached

@@ -2,7 +2,7 @@ CC=gcc
 
 CFLAGS= -I. -I/usr/local/include -Wall -Wextra -std=c99 -pedantic -O3 -ffast-math
 LDFLAGS = -L/usr/local/lib -L/usr/lib 
-LIBS = /usr/lib/libfftw3.so.3 -lm 
+LIBS = /usr/lib/libfftw3.so.3 -lpulse-simple -lpulse -lm 
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)

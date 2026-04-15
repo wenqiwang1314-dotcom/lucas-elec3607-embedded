@@ -1,6 +1,21 @@
 #!/bin/bash
 
-# this plays an audio file in the background and runs pa-wsprcan
+# Configure a mono/12 kHz virtual sink, play the WSPR sample into it,
+# then decode the corresponding monitor source with pa-wsprcan.
+set -euo pipefail
+
+cleanup() {
+	if [[ -n "${MODULE_ID:-}" ]]; then
+		pactl unload-module "$MODULE_ID" >/dev/null 2>&1 || true
+	fi
+}
+
+trap cleanup EXIT
+
+MODULE_ID=$(pactl load-module module-null-sink sink_name=MySink format=s16le channels=1 rate=12000)
+pactl set-default-sink MySink
+pactl set-default-source MySink.monitor
+
 echo -n "running paplay at "
 date
 paplay data/iq-16b.wav &

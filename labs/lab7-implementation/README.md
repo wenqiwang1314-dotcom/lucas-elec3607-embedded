@@ -24,6 +24,41 @@ mode -24 -1.1   0.001473 -1  VX2TXH QF56  7
 <DecodeFinished,data/wf-1744695594.wav,1>
 ```
 
+### Practical steps
+
+The software from `lab5-wspr` has been integrated into this directory so that
+the hardware receiver can be used directly with PulseAudio.
+
+1. Build the decoder:
+   ```bash
+   cd ~/elec3607-lab/labs/lab7-implementation
+   make
+   ```
+2. Plug in the USB sound card and identify the capture source:
+   ```bash
+   pactl list short sources
+   ```
+3. Set the USB microphone as the default PulseAudio input:
+   ```bash
+   ./set-usb-mic-source.sh USB
+   ```
+   If your device name uses a different label, pass a different match string.
+4. Check that the Linux clock is correct because WSPR frames begin on even UTC
+   minutes:
+   ```bash
+   date -u
+   ```
+5. Connect the SDR audio output to the USB sound card microphone input, then
+   start the synchronised decoder:
+   ```bash
+   ./wsprwait
+   ```
+
+`wsprwait` waits for an even minute boundary, selects the USB capture source,
+and runs `pa-wsprcan/k9an-wsprd`. Because the lab beacon transmits only once
+every 8 minutes, it is normal to wait through several decode windows before a
+packet appears.
+
 ## Part 4 - Band Pass Filter (Optional 20%)
 
 This part of the lab is optional and should be only be attempted if you

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+  <defs>
+    <marker id="arrow-red" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <path d="M 0 0 L 14 7 L 0 14 z" fill="#d71920"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <path d="M 0 0 L 14 7 L 0 14 z" fill="#1261d6"/>
+    </marker>
+    <style>
+      .bg { fill: #071827; }
+      .grid { stroke: #17344a; stroke-width: 1; opacity: 0.6; }
+      .board { fill: #4f9550; stroke: #172515; stroke-width: 4; }
+      .trace { stroke: #d71920; stroke-width: 2; fill: none; opacity: 0.65; }
+      .pad-red { fill: #d71920; stroke: #1c1c1c; stroke-width: 2; }
+      .pad-hole { fill: #f7c83a; stroke: #611; stroke-width: 3; }
+      .pad-black { fill: #111; stroke: #444; stroke-width: 2; }
+      .pad-gold { fill: #f6c431; stroke: #9a6600; stroke-width: 2; }
+      .label { font: 700 24px Arial, sans-serif; fill: #111; }
+      .small { font: 700 18px Arial, sans-serif; fill: #111; }
+      .tiny { font: 14px Arial, sans-serif; fill: #111; }
+      .box { fill: rgba(255,255,255,0.94); stroke: #111; stroke-width: 3; }
+      .warn { fill: #fff5b8; stroke: #d71920; stroke-width: 4; }
+      .sig { stroke: #d71920; stroke-width: 8; fill: none; marker-end: url(#arrow-red); }
+      .gnd { stroke: #1261d6; stroke-width: 8; fill: none; marker-end: url(#arrow-blue); }
+      .callout-red { fill: rgba(255,255,255,0.94); stroke: #d71920; stroke-width: 4; }
+      .callout-blue { fill: rgba(255,255,255,0.94); stroke: #1261d6; stroke-width: 4; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="820"/>
+  <g>
+    <path class="grid" d="M0 40 H1200 M0 80 H1200 M0 120 H1200 M0 160 H1200 M0 200 H1200 M0 240 H1200 M0 280 H1200 M0 320 H1200 M0 360 H1200 M0 400 H1200 M0 440 H1200 M0 480 H1200 M0 520 H1200 M0 560 H1200 M0 600 H1200 M0 640 H1200 M0 680 H1200 M0 720 H1200 M0 760 H1200"/>
+    <path class="grid" d="M40 0 V820 M80 0 V820 M120 0 V820 M160 0 V820 M200 0 V820 M240 0 V820 M280 0 V820 M320 0 V820 M360 0 V820 M400 0 V820 M440 0 V820 M480 0 V820 M520 0 V820 M560 0 V820 M600 0 V820 M640 0 V820 M680 0 V820 M720 0 V820 M760 0 V820 M800 0 V820 M840 0 V820 M880 0 V820 M920 0 V820 M960 0 V820 M1000 0 V820 M1040 0 V820 M1080 0 V820 M1120 0 V820 M1160 0 V820"/>
+  </g>
+
+  <text x="60" y="50" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="#ffffff">Part A: RF loopback modification, board view matching your SDR layout</text>
+
+  <!-- Board outline. This is the original KiCad board rotated to match the user's screenshot orientation. -->
+  <rect class="board" x="100" y="90" width="880" height="580" rx="14"/>
+
+  <!-- Mounting holes. -->
+  <circle class="pad-hole" cx="135" cy="125" r="18"/>
+  <circle class="pad-hole" cx="945" cy="125" r="18"/>
+  <circle class="pad-hole" cx="135" cy="635" r="18"/>
+  <circle class="pad-hole" cx="945" cy="635" r="18"/>
+
+  <!-- Left prototyping area, as seen in the board screenshot. -->
+  <g>
+    <rect x="125" y="145" width="180" height="270" fill="none" stroke="#244b2a" stroke-width="2"/>
+    <g fill="#f36b21" stroke="#321" stroke-width="2">
+      <circle cx="150" cy="170" r="7"/><circle cx="175" cy="170" r="7"/><circle cx="200" cy="170" r="7"/><circle cx="225" cy="170" r="7"/><circle cx="250" cy="170" r="7"/><circle cx="275" cy="170" r="7"/>
+      <circle cx="150" cy="195" r="7"/><circle cx="175" cy="195" r="7"/><circle cx="200" cy="195" r="7"/><circle cx="225" cy="195" r="7"/><circle cx="250" cy="195" r="7"/><circle cx="275" cy="195" r="7"/>
+      <circle cx="150" cy="220" r="7"/><circle cx="175" cy="220" r="7"/><circle cx="200" cy="220" r="7"/><circle cx="225" cy="220" r="7"/><circle cx="250" cy="220" r="7"/><circle cx="275" cy="220" r="7"/>
+      <circle cx="150" cy="245" r="7"/><circle cx="175" cy="245" r="7"/><circle cx="200" cy="245" r="7"/><circle cx="225" cy="245" r="7"/><circle cx="250" cy="245" r="7"/><circle cx="275" cy="245" r="7"/>
+      <circle cx="150" cy="270" r="7"/><circle cx="175" cy="270" r="7"/><circle cx="200" cy="270" r="7"/><circle cx="225" cy="270" r="7"/><circle cx="250" cy="270" r="7"/><circle cx="275" cy="270" r="7"/>
+      <circle cx="150" cy="295" r="7"/><circle cx="175" cy="295" r="7"/><circle cx="200" cy="295" r="7"/><circle cx="225" cy="295" r="7"/><circle cx="250" cy="295" r="7"/><circle cx="275" cy="295" r="7"/>
+      <circle cx="150" cy="320" r="7"/><circle cx="175" cy="320" r="7"/><circle cx="200" cy="320" r="7"/><circle cx="225" cy="320" r="7"/><circle cx="250" cy="320" r="7"/><circle cx="275" cy="320" r="7"/>
+      <circle cx="150" cy="345" r="7"/><circle cx="175" cy="345" r="7"/><circle cx="200" cy="345" r="7"/><circle cx="225" cy="345" r="7"/><circle cx="250" cy="345" r="7"/><circle cx="275" cy="345" r="7"/>
+    </g>
+    <text class="tiny" x="135" y="390">optional proto area</text>
+  </g>
+
+  <!-- Bottom 2x40 header silhouette. -->
+  <rect x="240" y="604" width="560" height="45" fill="#191919" stroke="#333" stroke-width="3"/>
+  <g fill="#b51418" stroke="#111" stroke-width="2">
+    <circle cx="265" cy="617" r="7"/><circle cx="290" cy="617" r="7"/><circle cx="315" cy="617" r="7"/><circle cx="340" cy="617" r="7"/><circle cx="365" cy="617" r="7"/><circle cx="390" cy="617" r="7"/><circle cx="415" cy="617" r="7"/><circle cx="440" cy="617" r="7"/><circle cx="465" cy="617" r="7"/><circle cx="490" cy="617" r="7"/><circle cx="515" cy="617" r="7"/><circle cx="540" cy="617" r="7"/><circle cx="565" cy="617" r="7"/><circle cx="590" cy="617" r="7"/><circle cx="615" cy="617" r="7"/><circle cx="640" cy="617" r="7"/><circle cx="665" cy="617" r="7"/><circle cx="690" cy="617" r="7"/><circle cx="715" cy="617" r="7"/><circle cx="740" cy="617" r="7"/>
+    <circle cx="265" cy="636" r="7"/><circle cx="290" cy="636" r="7"/><circle cx="315" cy="636" r="7"/><circle cx="340" cy="636" r="7"/><circle cx="365" cy="636" r="7"/><circle cx="390" cy="636" r="7"/><circle cx="415" cy="636" r="7"/><circle cx="440" cy="636" r="7"/><circle cx="465" cy="636" r="7"/><circle cx="490" cy="636" r="7"/><circle cx="515" cy="636" r="7"/><circle cx="540" cy="636" r="7"/><circle cx="565" cy="636" r="7"/><circle cx="590" cy="636" r="7"/><circle cx="615" cy="636" r="7"/><circle cx="640" cy="636" r="7"/><circle cx="665" cy="636" r="7"/><circle cx="690" cy="636" r="7"/><circle cx="715" cy="636" r="7"/><circle cx="740" cy="636" r="7"/>
+  </g>
+
+  <!-- J1 two-row header. Positions approximate the rotated KiCad footprint; pin17 is exact enough for the callout. -->
+  <g>
+    <rect x="292" y="350" width="385" height="70" fill="#222" stroke="#111" stroke-width="3"/>
+    <g class="pad-red">
+      <circle cx="650" cy="371" r="10"/><circle cx="623" cy="371" r="10"/><circle cx="596" cy="371" r="10"/><circle cx="569" cy="371" r="10"/><circle cx="542" cy="371" r="10"/><circle cx="515" cy="371" r="10"/><circle cx="488" cy="371" r="10"/><circle cx="461" cy="371" r="10"/><circle cx="435" cy="371" r="10"/><circle cx="408" cy="371" r="10"/><circle cx="381" cy="371" r="10"/><circle cx="354" cy="371" r="10"/><circle cx="327" cy="371" r="10"/><circle cx="300" cy="371" r="10"/>
+      <circle cx="650" cy="398" r="10"/><circle cx="623" cy="398" r="10"/><circle cx="596" cy="398" r="10"/><circle cx="569" cy="398" r="10"/><circle cx="542" cy="398" r="10"/><circle cx="515" cy="398" r="10"/><circle cx="488" cy="398" r="10"/><circle cx="461" cy="398" r="10"/><circle cx="435" cy="398" r="10"/><circle cx="408" cy="398" r="10"/><circle cx="381" cy="398" r="10"/><circle cx="354" cy="398" r="10"/><circle cx="327" cy="398" r="10"/><circle cx="300" cy="398" r="10"/>
+    </g>
+    <text class="small" x="292" y="342">J1 red jumper/header</text>
+  </g>
+
+  <!-- Simplified component traces to make it look like the KiCad board style. -->
+  <path class="trace" d="M435 371 C500 335, 560 320, 610 290"/>
+  <path class="trace" d="M650 515 C590 485, 520 475, 460 398"/>
+  <path class="trace" d="M300 308 C370 310, 430 325, 488 371"/>
+  <rect x="595" y="265" width="70" height="50" fill="#222" stroke="#111" stroke-width="3"/>
+  <text class="tiny" x="600" y="257">Si5351 U2 area</text>
+
+  <!-- Exact key points from KiCad, rotated into this board view. -->
+  <circle cx="435" cy="371" r="23" fill="none" stroke="#d71920" stroke-width="8"/>
+  <circle cx="435" cy="398" r="18" fill="none" stroke="#1261d6" stroke-width="6"/>
+  <circle cx="655" cy="515" r="25" fill="none" stroke="#d71920" stroke-width="8"/>
+  <circle cx="301" cy="308" r="25" fill="none" stroke="#1261d6" stroke-width="8"/>
+
+  <rect class="callout-red" x="360" y="265" width="270" height="55"/>
+  <text class="label" x="380" y="302">CLK2 = J1 pin 17</text>
+  <path class="sig" d="M495 320 L445 356"/>
+
+  <rect class="callout-red" x="675" y="485" width="245" height="60"/>
+  <text class="label" x="695" y="523">RF_IN_TP7</text>
+  <path class="sig" d="M675 515 L680 515"/>
+
+  <rect class="callout-blue" x="115" y="245" width="205" height="55"/>
+  <text class="label" x="142" y="282">GND_TP0</text>
+  <path class="gnd" d="M320 275 L306 297"/>
+
+  <!-- Loopback network shown off-board, connected back to real pads. -->
+  <rect class="warn" x="840" y="95" width="310" height="80"/>
+  <text class="small" x="864" y="128">Do not connect CLK2</text>
+  <text class="small" x="874" y="154">directly to RF_IN</text>
+
+  <rect class="box" x="815" y="245" width="130" height="70"/>
+  <text class="label" x="842" y="273">10 nF</text>
+  <text class="small" x="833" y="300">DC block</text>
+
+  <rect class="box" x="990" y="245" width="130" height="70"/>
+  <text class="label" x="1023" y="273">100 k</text>
+  <text class="small" x="1019" y="300">series</text>
+
+  <rect class="box" x="990" y="385" width="130" height="70"/>
+  <text class="label" x="1028" y="413">51 ohm</text>
+  <text class="small" x="1022" y="440">to GND</text>
+
+  <path class="sig" d="M458 371 C585 270, 710 260, 815 280"/>
+  <path class="sig" d="M945 280 L990 280"/>
+  <path class="sig" d="M1120 280 C1005 375, 860 455, 680 505"/>
+  <path class="gnd" d="M1055 385 C840 360, 570 325, 326 310"/>
+
+  <rect class="box" x="120" y="710" width="960" height="70"/>
+  <text class="label" x="160" y="742">Actual modification: CLK2/J1 pin17 -> 10 nF -> 100 k -> RF_IN_TP7</text>
+  <text class="small" x="160" y="768">Add 51 ohm from RF_IN_TP7 to a nearby GND point. GND_TP0 or J1 pin18 are valid ground references.</text>
+</svg>
